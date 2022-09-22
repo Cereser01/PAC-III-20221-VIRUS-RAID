@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Infected_Citotoxica_Bullet.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Pictures/projetil_roxo.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Infected_Citotoxica_Bullet" type="Sprite"]
+self_modulate = Color( 0.964706, 0.313726, 0.282353, 1 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Enemy_damager"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+scale = Vector2( 12.5, 12.5 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

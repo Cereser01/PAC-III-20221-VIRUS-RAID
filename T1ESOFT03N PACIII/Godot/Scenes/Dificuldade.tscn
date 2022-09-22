@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Dificuldade.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Pictures/background.png" type="Texture" id=2]
+
+[node name="Dificuldade" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 18.9997, 52.4997 )
+scale = Vector2( 10.3219, 13.6125 )
+texture = ExtResource( 2 )
+
+[node name="Dificuldade" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = -92.0
+margin_right = -3.0
+margin_bottom = -4.0
+rect_scale = Vector2( 2, 2 )
+text = "Dificuldade"
+align = 1
+valign = 1
+
+[node name="Voltar" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 481.0
+margin_top = -123.0
+margin_right = 529.0
+margin_bottom = -103.0
+text = "voltar"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.414
+anchor_top = 0.673
+anchor_right = 0.574
+anchor_bottom = 0.673
+margin_left = -20.0
+margin_top = -34.0
+margin_right = 20.0
+margin_bottom = 34.0
+
+[node name="Facil" type="Button" parent="VBoxContainer"]
+margin_right = 258.0
+margin_bottom = 20.0
+text = "Fácil"
+
+[node name="Normal" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 258.0
+margin_bottom = 44.0
+text = "Normal"
+
+[node name="Dificil" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 258.0
+margin_bottom = 68.0
+text = "Difícil"
+
+[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Facil" to="." method="_on_Facil_pressed"]
+[connection signal="pressed" from="VBoxContainer/Normal" to="." method="_on_Normal_pressed"]
+[connection signal="pressed" from="VBoxContainer/Dificil" to="." method="_on_Dificil_pressed"]

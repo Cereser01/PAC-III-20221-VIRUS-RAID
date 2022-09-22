@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Pictures/Circle.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Anticorpo_Bullet.gd" type="Script" id=2]
+
+[node name="Anticorpo_Bullet" type="Sprite"]
+modulate = Color( 0.94902, 0.4, 0.4, 1 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Player_damager"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." groups=["Player_damager"]]
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

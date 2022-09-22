@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Magician Lord - Stage 3 Music Highway Leading to a Foreign Space.mp3-9568ea3be16ce5c2a516e7da0658de15.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Magician Lord - Stage 3 Music Highway Leading to a Foreign Space.mp3"
+dest_files=[ "res://.import/Magician Lord - Stage 3 Music Highway Leading to a Foreign Space.mp3-9568ea3be16ce5c2a516e7da0658de15.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

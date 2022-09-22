@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Pictures/background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Pictures/VITORIA.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/VictoryScreen.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sounds/justAburningMemoryButSadder.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Pictures/Sadtrollface.png" type="Texture" id=5]
+
+[node name="VictoryScreen" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 636, 324.5 )
+scale = Vector2( 8.775, 11.5403 )
+z_index = -11
+texture = ExtResource( 1 )
+
+[node name="Vitoria" type="Sprite" parent="."]
+position = Vector2( 503, 231 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 503.0
+margin_top = 361.0
+margin_right = 570.0
+margin_bottom = 510.0
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+margin_right = 67.0
+margin_bottom = 20.0
+text = "Restart"
+
+[node name="Menu" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 67.0
+margin_bottom = 44.0
+text = "Menu"
+
+[node name="Sair" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 67.0
+margin_bottom = 68.0
+text = "Sair"
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 503.0
+margin_top = 301.0
+margin_right = 543.0
+margin_bottom = 341.0
+
+[node name="Parabens" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -58.0
+margin_top = -38.0
+margin_right = 88.0
+margin_bottom = -7.0
+text = "Parabéns! Você matou 
+seu hospedeiro!"
+align = 1
+valign = 1
+
+[node name="Dificuldade" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = 1.0
+margin_right = 69.0
+margin_bottom = 15.0
+text = "Dificuldade: Fácil"
+align = 1
+valign = 1
+
+[node name="SADNOISES" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="SADtrollface" type="Sprite" parent="."]
+position = Vector2( 1133, 376 )
+scale = Vector2( 0.9125, 0.919259 )
+z_index = -1
+texture = ExtResource( 5 )
+
+[connection signal="ready" from="." to="." method="_on_VictoryScreen_ready"]
+[connection signal="ready" from="Vitoria" to="." method="_on_Vitoria_ready"]
+[connection signal="ready" from="VBoxContainer" to="." method="_on_VBoxContainer_ready"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="ready" from="VBoxContainer/Restart" to="." method="_on_Restart_ready"]
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="ready" from="VBoxContainer/Menu" to="." method="_on_Menu_ready"]
+[connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_Sair_pressed"]
+[connection signal="ready" from="VBoxContainer/Sair" to="." method="_on_Sair_ready"]
+[connection signal="ready" from="Control" to="." method="_on_Control_ready"]
+[connection signal="ready" from="Control/Parabens" to="." method="_on_Parabens_ready"]
+[connection signal="ready" from="Control/Dificuldade" to="." method="_on_Dificuldade_ready"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Pictures/background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Pictures/antiBody.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Ubuntu-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/AntibodyBR.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 3 )
+
+[node name="1BR" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 584, 369 )
+scale = Vector2( 6.3556, 2.51975 )
+texture = ExtResource( 1 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Anterior" type="Button" parent="."]
+margin_left = 420.0
+margin_top = 530.0
+margin_right = 492.0
+margin_bottom = 550.0
+text = "Anterior"
+
+[node name="Proximo" type="Button" parent="."]
+margin_left = 502.0
+margin_top = 530.0
+margin_right = 574.0
+margin_bottom = 550.0
+text = "Proximo"
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 1.0
+margin_top = 579.0
+margin_right = 49.0
+margin_bottom = 599.0
+text = "Menu"
+
+[node name="TITULO" type="Label" parent="."]
+margin_left = 312.0
+margin_top = 38.0
+margin_right = 688.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 4 )
+text = "ANTICORPOS"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = 65.0
+margin_top = 255.0
+margin_right = 985.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 5 )
+text = "Os anticorpos, também conhecidos como imunoglobulina, são 
+proteínas grandes, em formato de ‘Y’, usadas pelo sistema imunológico para
+identificar e destruir corpos estranhos. Na vida real, o anticorpo reconhece 
+uma molécula única do patógeno, chamada de antígeno. Cada ponta do
+anticorpo contém um paratopo, que, como uma chave, se liga à um epítopo
+de um antígeno, permitindo que ambas as estruturas se liguem com
+precisão, marcando um corpo estranho ou neutralizando-o. No jogo
+eles são inimigos que atiram projeteis rápidos no jogador."
+align = 1
+valign = 1
+
+[node name="AntiBody" type="Sprite" parent="."]
+position = Vector2( 499, 171 )
+texture = ExtResource( 2 )
+
+[connection signal="pressed" from="Anterior" to="." method="_on_Anterior_pressed"]
+[connection signal="pressed" from="Proximo" to="." method="_on_Proximo_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]

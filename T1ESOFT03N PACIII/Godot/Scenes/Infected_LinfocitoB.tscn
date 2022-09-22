@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Infected_LinfocitoB.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Pictures/linfocitoB.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sounds/3secDrown.mp3" type="AudioStream" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Infected_LinfocitoB" type="Sprite"]
+modulate = Color( 0.552941, 0.964706, 0.6, 1 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+scale = Vector2( 30, 30 )
+shape = SubResource( 1 )
+
+[node name="Death_Timer" type="Timer" parent="."]
+
+[node name="Color_timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="Death_Alert_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+bus = "Effects"
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="timeout" from="Death_Timer" to="." method="_on_Death_Timer_timeout"]
+[connection signal="timeout" from="Color_timer" to="." method="_on_Color_timer_timeout"]

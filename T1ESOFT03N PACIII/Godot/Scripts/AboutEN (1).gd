@@ -1,0 +1,37 @@
+extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$TITLE.rect_position = Vector2(Global.screensize_horiz/3, Global.screensize_vert/8)
+	$Sprite.position +=  Vector2(Global.screensize_horiz/5 -120, Global.screensize_vert/8)
+	$Whitecell.position +=  Vector2(Global.screensize_horiz/5 -120, Global.screensize_vert/8)
+	$Label.rect_position = Vector2(Global.screensize_horiz/8, Global.screensize_vert/2)
+	$Anterior.rect_position = Vector2(Global.screensize_horiz/3+120, Global.screensize_vert/1.2)
+	$Proximo.rect_position = Vector2(Global.screensize_horiz/3+200, Global.screensize_vert/1.2)
+	$Menu.rect_position = Vector2(Global.screensize_horiz/500, Global.screensize_vert/1.12)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_Anterior_pressed():
+	assert(get_tree().change_scene("res://Scenes/AboutEN.tscn") == OK)
+	pass # Replace with function body.
+
+
+func _on_Proximo_pressed():
+	assert(get_tree().change_scene("res://Scenes/ObjectivesEN.tscn") == OK)
+	pass # Replace with function body.
+
+
+func _on_Menu_pressed():
+	assert(get_tree().change_scene("res://Scenes/Menu.tscn") == OK)
+	pass # Replace with function body.

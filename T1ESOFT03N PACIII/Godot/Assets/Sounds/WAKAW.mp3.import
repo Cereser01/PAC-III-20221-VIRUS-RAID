@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/WAKAW.mp3-1657724a433d06683b98f3444bcad70a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/WAKAW.mp3"
+dest_files=[ "res://.import/WAKAW.mp3-1657724a433d06683b98f3444bcad70a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

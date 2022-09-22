@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Pictures/background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Pictures/varus2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Ubuntu-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/AboutEN.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 23
+font_data = ExtResource( 3 )
+
+[node name="AboutEN" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 483, 277 )
+scale = Vector2( 6.3556, 2.51975 )
+texture = ExtResource( 1 )
+
+[node name="TITLE" type="RichTextLabel" parent="."]
+margin_left = 298.0
+margin_top = 21.0
+margin_right = 765.0
+margin_bottom = 83.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+tab_size = 24
+text = "ABOUT THE PLAYER"
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Anterior" type="Button" parent="."]
+margin_left = 420.0
+margin_top = 530.0
+margin_right = 492.0
+margin_bottom = 550.0
+text = "Previous"
+
+[node name="Proximo" type="Button" parent="."]
+margin_left = 502.0
+margin_top = 530.0
+margin_right = 574.0
+margin_bottom = 550.0
+text = "Next"
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 1.0
+margin_top = 579.0
+margin_right = 49.0
+margin_bottom = 599.0
+text = "Menu"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 506, 177 )
+scale = Vector2( 0.177128, 0.182231 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 304.0
+margin_top = 298.0
+margin_right = 720.0
+margin_bottom = 505.0
+custom_fonts/font = SubResource( 3 )
+text = "The player represents a virus,
+trying to infect a host. Note that
+the game does not represent a real 
+infecction, for gameplay purpose.
+It is possible to infect enemies and
+destroy red blood cells to decrease
+immunity."
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Anterior" to="." method="_on_Anterior_pressed"]
+[connection signal="pressed" from="Proximo" to="." method="_on_Proximo_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]

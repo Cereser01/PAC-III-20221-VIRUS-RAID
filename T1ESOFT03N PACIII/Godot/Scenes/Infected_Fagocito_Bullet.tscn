@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Pictures/Circle.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Infected_Fagocito_Bullet.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Infected_Fagocito_Bullet" type="Sprite"]
+modulate = Color( 0.784314, 0.854902, 0.831373, 1 )
+self_modulate = Color( 0.788235, 0.815686, 0.788235, 1 )
+scale = Vector2( 0.03, 0.6 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Enemy_damager"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+scale = Vector2( 6, 6 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="Duration_Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="timeout" from="Duration_Timer" to="." method="_on_Duration_Timer_timeout"]

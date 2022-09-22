@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Y2Mate.is - Taco Bell Bong - Sound Effect (HD)-umqA5IMx_2I-160k-1647082407550.mp3-ef483c52c99a19ae704219bc64495a2e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Y2Mate.is - Taco Bell Bong - Sound Effect (HD)-umqA5IMx_2I-160k-1647082407550.mp3"
+dest_files=[ "res://.import/Y2Mate.is - Taco Bell Bong - Sound Effect (HD)-umqA5IMx_2I-160k-1647082407550.mp3-ef483c52c99a19ae704219bc64495a2e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Pictures/background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Pictures/Ajuda.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/HelpBR.gd" type="Script" id=3]
+
+[node name="Ajuda" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 511.339, 301.5 )
+scale = Vector2( 2.70498, 2.62235 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 396.0
+margin_top = 334.0
+margin_right = 470.0
+margin_bottom = 450.0
+rect_scale = Vector2( 2.05326, 1.68927 )
+
+[node name="Player" type="Button" parent="VBoxContainer"]
+margin_right = 74.0
+margin_bottom = 20.0
+text = "Jogador"
+
+[node name="Controls" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 74.0
+margin_bottom = 44.0
+text = "Controles"
+
+[node name="Enemies" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 74.0
+margin_bottom = 68.0
+text = "Inimigos"
+
+[node name="Objectives" type="Button" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 74.0
+margin_bottom = 92.0
+text = "Objetivos"
+
+[node name="Voltar" type="Button" parent="VBoxContainer"]
+margin_top = 96.0
+margin_right = 74.0
+margin_bottom = 116.0
+text = "Voltar"
+
+[node name="Ajuda" type="Sprite" parent="VBoxContainer"]
+position = Vector2( 36.5273, -88.7958 )
+scale = Vector2( 0.644349, 0.751309 )
+texture = ExtResource( 2 )
+
+[connection signal="pressed" from="VBoxContainer/Player" to="." method="_on_Player_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="VBoxContainer/Enemies" to="." method="_on_Enemies_pressed"]
+[connection signal="pressed" from="VBoxContainer/Objectives" to="." method="_on_Objectives_pressed"]
+[connection signal="pressed" from="VBoxContainer/Voltar" to="." method="_on_Voltar_pressed"]

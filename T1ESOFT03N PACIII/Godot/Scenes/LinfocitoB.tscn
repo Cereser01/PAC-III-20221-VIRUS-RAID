@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/LinfocitoB.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sounds/WAKAW.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Pictures/linfocitoB.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="LinfocitoB" type="Sprite"]
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 3 )
+script = ExtResource( 1 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+scale = Vector2( 30, 30 )
+shape = SubResource( 1 )
+
+[node name="Stun_Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Leave_Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+bus = "Effects"
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="timeout" from="Stun_Timer" to="." method="_on_Stun_Timer_timeout"]
+[connection signal="timeout" from="Leave_Timer" to="." method="_on_Leave_Timer_timeout"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
